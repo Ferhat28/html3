@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfolgsspirale - Neues Design</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        /* DIN A4 Druck-Styles */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                width: 210mm !important;
+                height: 297mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-container {
+            width: 794px;
+            height: 1123px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .main-title {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: -1px;
+            z-index: 10;
+        }
+
+        .spiral-container {
+            position: relative;
+            width: 700px;
+            height: 800px;
+            margin-top: 60px;
+        }
+
+        .success-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                0 8px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            width: 300px;
+            height: 155px;
+        }
+
+        .success-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .success-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 12px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-text {
+            font-size: 17px;
+            font-weight: 500;
+            color: #2d3748;
+            line-height: 1.4;
+            letter-spacing: -0.3px;
+        }
+
+        /* Zickzack-Positionierung mit wirklich gleichmäßigen vertikalen Abständen */
+        /* Oben links */
+        .card-1 {
+            top: 60px;
+            left: 30px;
+        }
+
+        /* Rechts Mitte */
+        .card-2 {
+            top: 255px;
+            right: 30px;
+        }
+
+        /* Links Mitte */
+        .card-3 {
+            top: 450px;
+            left: 30px;
+        }
+
+        /* Unten rechts */
+        .card-4 {
+            top: 645px;
+            right: 30px;
+        }
+
+        .subtitle {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        /* Print optimizations */
+        @media print {
+            body {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+            }
+            
+            .success-card:hover {
+                transform: none !important;
+            }
+            
+            .main-title {
+                font-size: 42px;
+            }
+            
+            .card-text {
+                font-size: 15px;
+            }
+            
+            .success-card {
+                height: 140px;
+                padding: 24px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Haupttitel -->
+        <h1 class="main-title">Erfolgsspirale</h1>
+        
+        <!-- Spiral Container mit Zickzack-Anordnung -->
+        <div class="spiral-container">
+            
+            <!-- Card 1: Oben links -->
+            <div class="success-card card-1">
+                <div class="card-text">
+                    Du kannst eine bessere Form<br>
+                    erreichen, mehr Geld<br>
+                    verdienen, attraktivere<br>
+                    Frauen anziehen...
+                </div>
+            </div>
+            
+            <!-- Card 2: Rechts Mitte -->
+            <div class="success-card card-2">
+                <div class="card-text">
+                    Weil es dir besser geht<br>
+                    schaffst du mehr Dinge mit<br>
+                    weniger Energie-Einsatz
+                </div>
+            </div>
+            
+            <!-- Card 3: Links Mitte -->
+            <div class="success-card card-3">
+                <div class="card-text">
+                    Weil du glücklicher bist, geht es dir<br>
+                    besser = weniger Selbstsabotage
+                </div>
+            </div>
+            
+            <!-- Card 4: Unten rechts -->
+            <div class="success-card card-4">
+                <div class="card-text">
+                    Du erreichst dein Ziel<br>
+                    und bist glücklicher
+                </div>
+            </div>
+        </div>
+        
+        <!-- Untertitel -->
+        <div class="subtitle">Der positive Kreislauf des Erfolgs</div>
+    </div>
+</body>
+</html>
